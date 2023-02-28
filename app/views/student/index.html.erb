@@ -1,2 +1,37 @@
-<h1>Student#index</h1>
-<p>Find me in app/views/student/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo APP</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/fontawesome.min.css">
+  </head>
+  <body>
+
+  <h1>Basic Crud APP</h1>
+    <div class="container">
+    <table class="table">
+  <thead>
+    <tr> 
+      <th scope="col">Student</th>
+      <th scope="col">Enrollment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @students.each do |student| %>
+    <tr>
+      <td><%= link_to student.name, student_path(student)%></td>
+      <td><%= link_to student.enroll, student_path(student)%></td>
+    </tr>
+    <% end %>
+    
+  </tbody>
+</table>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
